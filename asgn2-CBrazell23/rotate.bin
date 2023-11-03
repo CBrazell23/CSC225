@@ -1,0 +1,15 @@
+; Rotates the bits of the value at 0x3050 left once.
+; CSC 225, Assignment 2
+; Given code, Winter '20
+
+0011 0000 0000 0000     ; Start at 0x3000.
+                        ; TODO: Complete this program.
+0010 000 001001111      ; Loads from 3050 into R0
+0101 001 000 1 00000    ; Resets R1
+0000 001 000000011      ; Branches if neg
+0001 001 000 000 000    ; R1 = R0 * 2 (Left Shift)
+0001 001 001 100 001    ; R1 = R1 + 1
+0000 010 000000001      ; Branches if 0
+0001 001 000 000 000    ; R1 = R0 * 2 (Left Shift)
+0011 001 001001000      ; Store to 3050
+1111 0000 00100101      ; Finish the program
